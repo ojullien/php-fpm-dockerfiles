@@ -57,8 +57,8 @@ docker run -dit --rm --name my-running-php-fpm my-php-fpm
 
 # Documentation
 
-- [PHP7.4 dockerfile](https://github.com/ojullien/php-fpm-dockerfiles/7.4/)
-- [PHP8.0 dockerfile](https://github.com/ojullien/php-fpm-dockerfiles/8.0/)
+- [PHP7.4 dockerfile](https://github.com/ojullien/php-fpm-dockerfiles/tree/main/7.4)
+- [PHP8.0 dockerfile](https://github.com/ojullien/php-fpm-dockerfiles/tree/main/8.0)
 - [PHP Official image](https://hub.docker.com/_/php/)
 - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
 - [docker build](https://docs.docker.com/engine/reference/commandline/build/)

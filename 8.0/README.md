@@ -22,7 +22,7 @@ docker pull mlocati/php-extension-installer
 
 This image will ship with the default **php.ini-production** configuration file.
 
-This default config can be customized by editing the [zzz-prod.ini configuration file](8.0/conf.d/zzz-prod.ini) into the [conf.d/](8.0/conf.d/) directory.
+This default config can be customized by editing the [zzz-prod.ini configuration file](https://github.com/ojullien/php-fpm-dockerfiles/blob/main/8.0/conf.d/zzz-prod.ini) into the [conf.d/](https://github.com/ojullien/php-fpm-dockerfiles/tree/main/8.0/conf.d) directory.
 
 ## How to use
 
