@@ -2,7 +2,7 @@
 
 # PHP-FPM dockerfiles
 
-Build and configure a PHP-FPM (PHP7.4, PHP8.0) image from an official [PHP-FPM Alpine Linux builds](https://hub.docker.com/_/php/?tab=tags&page=1&ordering=last_updated&name=fpm-alpine).
+Build and configure a PHP-FPM (PHP7.4, PHP8.0) image from an official [PHP-FPM Alpine Linux build](https://hub.docker.com/_/php/?tab=tags&page=1&ordering=last_updated&name=fpm-alpine).
 
 ## Requirements
 
@@ -22,7 +22,9 @@ docker pull mlocati/php-extension-installer
 
 The images will ship with the default **php.ini-production** configuration file.
 
-This default config can be customized by editing the **zzz-prod.ini configuration file** into the **conf.d/** directory.
+This default config may be customized by editing the **zzz-prod.ini configuration file** from the **conf.d/** directory.
+
+*Note: I use those images for my own projects, the configuration files contain the settings I need. There are completely customizable to your needs.*
 
 ## How to use
 

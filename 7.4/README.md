@@ -22,7 +22,10 @@ docker pull mlocati/php-extension-installer
 
 This image will ship with the default **php.ini-production** configuration file.
 
-This default config can be customized by editing the [zzz-prod.ini configuration file](https://github.com/ojullien/php-fpm-dockerfiles/blob/main/7.4/conf.d/zzz-prod.ini) into the [conf.d/](https://github.com/ojullien/php-fpm-dockerfiles/tree/main/7.4/conf.d) directory.
+This default config can be customized by editing the [zzz-prod.ini configuration file](https://github.com/ojullien/php-fpm-dockerfiles/blob/main/7.4/conf.d/zzz-prod.ini) from the [conf.d/](https://github.com/ojullien/php-fpm-dockerfiles/tree/main/7.4/conf.d) directory.
+
+*Note: I use this image for my own projects, the configuration file contains the settings I need. It's completely customizable to your needs.*
+*You may find more PHP-FPM configuration and pool templates [in this repository](https://github.com/ojullien/php-fpm)*
 
 ## How to use
 
