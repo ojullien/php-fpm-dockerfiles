@@ -24,7 +24,7 @@ The images will ship with the default **php.ini-production** configuration file.
 
 This default config may be customized by editing the **zzz-prod.ini configuration file** from the **conf.d/** directory.
 
-*Note: I use those images for my own projects, the configuration files contain the settings I need. There are completely customizable to your needs.*
+*Note: I use those images for my own projects, the configuration files contain the settings and modules I need. There are completely customizable to your needs.*
 
 ## How to use
 
@@ -33,7 +33,7 @@ Go to the PHP version directory you need. Run the commands to build and run the 
 ```sh
 DOCKER_BUILDKIT=1 docker build --no-cache --tag my-php-fpm .
 
-docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --expose 9000 my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9000:9000 my-php-fpm
 ```
 
 ## How to install more PHP extensions
@@ -46,7 +46,7 @@ For example, if you want to have a PHP-FPM image with the **gd** extension, run 
 ```sh
 DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension=gd --tag my-php-fpm .
 
-docker run -dit --rm --name my-running-php-fpm my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9000:9000 my-php-fpm
 ```
 
 Another example, if you want to have a PHP-FPM image with the **mysqli** and **pdo_mysql** extensions, run the commands:
@@ -54,7 +54,7 @@ Another example, if you want to have a PHP-FPM image with the **mysqli** and **p
 ```sh
 DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension="mysqli pdo_mysql" --tag my-php-fpm .
 
-docker run -dit --rm --name my-running-php-fpm my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9000:9000 my-php-fpm
 ```
 
 # Documentation

@@ -24,7 +24,7 @@ This image will ship with the default **php.ini-production** configuration file.
 
 This default config can be customized by editing the [zzz-prod.ini configuration file](https://github.com/ojullien/php-fpm-dockerfiles/blob/main/7.4/conf.d/zzz-prod.ini) from the [conf.d/](https://github.com/ojullien/php-fpm-dockerfiles/tree/main/7.4/conf.d) directory.
 
-*Note: I use this image for my own projects, the configuration file contains the settings I need. It's completely customizable to your needs.*
+*Note: I use this image for my own projects, the configuration file contains the settings and modules I need. It's completely customizable to your needs.*
 *You may find more PHP-FPM configuration and pool templates [in this repository](https://github.com/ojullien/php-fpm)*
 
 ## How to use
@@ -32,10 +32,13 @@ This default config can be customized by editing the [zzz-prod.ini configuration
 Run the commands to build and run the Docker image:
 
 ```sh
-DOCKER_BUILDKIT=1 docker build --no-cache --tag my-php-fpm .
+DOCKER_BUILDKIT=1 docker build --no-cache --tag my-php7.4-fpm .
 
-docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --expose 9000 my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php7.4-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9080:9000 my-php7.4-fpm
 ```
+
+. Default working directory is `/var/www`.
+. Default port for the fcgi protocol is `9000`.
 
 ## How to install more PHP extensions
 
@@ -64,17 +67,17 @@ And, to easily install more PHP extensions, we provide a variable that you can p
 For example, if you want to have a PHP-FPM image with the **gd** extension, run the commands:
 
 ```sh
-DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension=gd --tag my-php-fpm .
+DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension=gd --tag my-php7.4-fpm .
 
-docker run -dit --rm --name my-running-php-fpm my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php7.4-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9080:9080 my-php7.4-fpm
 ```
 
 Another example, if you want to have a PHP-FPM image with the **mysqli** and **pdo_mysql** extensions, run the commands:
 
 ```sh
-DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension="mysqli pdo_mysql" --tag my-php-fpm .
+DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension="mysqli pdo_mysql" --tag my-php7.4-fpm .
 
-docker run -dit --rm --name my-running-php-fpm my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php7.4-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9080:9080 my-php7.4-fpm
 ```
 
 # Documentation
