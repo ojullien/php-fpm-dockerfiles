@@ -33,7 +33,10 @@ Go to the PHP version directory you need. Run the commands to build and run the 
 ```sh
 DOCKER_BUILDKIT=1 docker build --no-cache --tag my-php-fpm .
 
-docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9000:9000 my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php-fpm \
+           --volume /var/www:/var/www --workdir /var/www \
+           --publish 127.0.0.1:9000:9000 \
+           my-php-fpm
 ```
 
 ## How to install more PHP extensions
@@ -46,7 +49,10 @@ For example, if you want to have a PHP-FPM image with the **gd** extension, run 
 ```sh
 DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension=gd --tag my-php-fpm .
 
-docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9000:9000 my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php-fpm \
+           --volume /var/www:/var/www --workdir /var/www \
+           --publish 127.0.0.1:9000:9000 \
+           my-php-fpm
 ```
 
 Another example, if you want to have a PHP-FPM image with the **mysqli** and **pdo_mysql** extensions, run the commands:
@@ -54,7 +60,10 @@ Another example, if you want to have a PHP-FPM image with the **mysqli** and **p
 ```sh
 DOCKER_BUILDKIT=1 docker build --no-cache --build-arg user_extension="mysqli pdo_mysql" --tag my-php-fpm .
 
-docker run --detach --interactive --tty --rm --name my-running-php-fpm --volume /var/www:/var/www --workdir /var/www --publish 127.0.0.1:9000:9000 my-php-fpm
+docker run --detach --interactive --tty --rm --name my-running-php-fpm \
+           --volume /var/www:/var/www --workdir /var/www \
+           --publish 127.0.0.1:9000:9000 \
+           my-php-fpm
 ```
 
 # Documentation
