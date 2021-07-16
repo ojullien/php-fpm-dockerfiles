@@ -4,6 +4,8 @@
 
 Build and configure a PHP-FPM (PHP7.4, PHP8.0) image from an official [PHP-FPM Alpine Linux build](https://hub.docker.com/_/php/?tab=tags&page=1&ordering=last_updated&name=fpm-alpine).
 
+You may find my Docker images in [Docker Hub](https://hub.docker.com/r/ojullien/php-fpm)
+
 ## Requirements
 
 - Docker version ^20.10
