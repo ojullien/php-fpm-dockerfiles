@@ -1,8 +1,8 @@
 name: Docker Image CI
 
 on:
-#  schedule:
-#  - cron: '5 4 * * 2'
+  schedule:
+  - cron: '33 3 * * 3'
   workflow_dispatch:
     
 env:
@@ -40,5 +40,5 @@ jobs:
           context: ${{ matrix.php-version }}
           build-args: "user_extension=${{ env.USER_EXTENSION }}"
           no-cache: true
-          push: false
+          push: true
           tags: ${{ github.actor }}/php-fpm:${{ matrix.php-version }}-fpm-alpine
