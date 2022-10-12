@@ -35,7 +35,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
-        uses: docker/build-push-action@v2.7.0
+        uses: docker/build-push-action@v3.2.0
         with:
           context: ${{ matrix.php-version }}
           build-args: "user_extension=${{ env.USER_EXTENSION }}"
